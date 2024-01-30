@@ -10,5 +10,5 @@ app.use('/', (req, res, next) => {
 })
 
 app.listen(8002, () => {
-    console.log('Customer is listening port 8001')
+    console.log('Product is listening port 8002')
 })
