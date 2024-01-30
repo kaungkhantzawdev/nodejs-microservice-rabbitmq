@@ -80,6 +80,7 @@ class CustomerService {
     }
 
     async ManageCart(customerId, product, qty, isRemove){
+        console.log('manage cart', customerId, product, qty, isRemove)
         const cartResult = await this.repository.AddCartItem(customerId, product, qty, isRemove);        
        return FormateData(cartResult);
     }
@@ -93,7 +94,8 @@ class CustomerService {
  
         console.log('Triggering.... Customer Events')
 
-        console.log('check event',  payload.data)
+        payload = JSON.parse(payload)
+        console.log('data', payload)
 
         const { event, data } =  payload.data;
 

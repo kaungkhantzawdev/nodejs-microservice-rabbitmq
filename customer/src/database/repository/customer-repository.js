@@ -67,7 +67,7 @@ class CustomerRepository {
         const product = {
             _id, name, desc, price, available, banner
         };
-        console.log('check', product)
+        console.log('check', customerId, _id, name, desc, price, available, banner)
 
         const profile = await CustomerModel.findById(customerId).populate('wishlist');
        
@@ -115,6 +115,7 @@ class CustomerRepository {
                 product: { _id, name, price, banner },
                 unit: qty,
             };
+            console.log('add to cart', cartItem)
           
             let cartItems = profile.cart;
             
